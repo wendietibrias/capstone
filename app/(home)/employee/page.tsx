@@ -2,7 +2,7 @@
 const Employee = () => {
     return (
         <>
-          
+          <div className="w-full"></div>
         </>
     )
 }
