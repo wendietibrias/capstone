@@ -1,18 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/libs/components/global/Navbar/Navbar";
 import Footer from "@/libs/components/global/Footer/Footer";
-import { AntdRegistry } from '@ant-design/nextjs-registry';
+import AntdProvider from "@/libs/components/global/AntdProvider/AntdProvider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
+
+const poppins = Poppins({
   subsets: ["latin"],
+  weight: ["200", "400", "500", "600", "800"],
 });
 
 export const metadata: Metadata = {
@@ -27,14 +32,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <main className="w-full px-20">
-          <Navbar />
-          <AntdRegistry>{children}</AntdRegistry>
-          <Footer />
-        </main>
+      <body className={`antialiased ${poppins.className}`}>
+        <AntdProvider>
+          <main className="w-[80%] mx-auto">
+            <Navbar />
+            <div className="py-10 h-screen">{children}</div>
+            <Footer />
+          </main>
+        </AntdProvider>
       </body>
     </html>
   );

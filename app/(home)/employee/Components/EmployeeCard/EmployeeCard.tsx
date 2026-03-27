@@ -1,8 +1,13 @@
+import { Button, Card } from "antd"
 import { IEmployeeCard } from "../../Interfaces/employeeCard.interface"
 
-const EmployeeCard = (props: IEmployeeCard) => {
+const EmployeeCard = (props: { data: IEmployeeCard }) => {
   return (
-    <div>EmployeeCard</div>
+     <Card>
+        <h3>{props.data.name}</h3>
+        <p>{props.data.email}</p>
+        <Button type="primary" className="mt-3">Detail Employee</Button>
+     </Card>
   )
 }
 
