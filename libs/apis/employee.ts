@@ -9,12 +9,17 @@ export async function axiosGetEmployees(){
     return requests.data;
 }
 
-export async function axiosPostEmployee(values: any){
-    const requests = await axios.post(`/employees`, values);
+export async function axiosPostEmployee(createPayloadDto: any){
+    const requests = await axios.post(`/employees`, createPayloadDto);
     return requests.data;
 }
 
 export async function axiosGetEmployee(id: number){
     const requests = await axios.get(`/employees/${id}`);
+    return requests.data;
+}
+
+export async function axiosUpdateEmployee(id: number, updatePayloadDto:any){
+    const requests = await axios.patch(`/employees/${id}`, updatePayloadDto);
     return requests.data;
 }

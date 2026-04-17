@@ -1,10 +1,10 @@
 import { axiosGetEmployees } from "@/libs/apis/employee";
 import { Button, Col, Flex, Row } from "antd";
 import { IEmployeeCard } from "./Interfaces/employeeCard.interface";
-import EmployeeCard from "./components/EmployeeCard/EmployeeCard";
 import Link from "next/link";
 import { Suspense } from "react";
 import LoadingSpinner from "@/libs/components/global/Loading/LoadingSpinner";
+import EmployeeCard from "./Components/EmployeeCard/EmployeeCard";
 
 export const revalidate = 3000;
 

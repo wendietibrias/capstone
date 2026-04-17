@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import "./globals.css";
 import Navbar from "@/libs/components/global/Navbar/Navbar";
 import Footer from "@/libs/components/global/Footer/Footer";
 import AntdProvider from "@/libs/components/global/AntdProvider/AntdProvider";
@@ -34,7 +33,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`antialiased ${poppins.className}`}>
         <AntdProvider>
-          <main className="w-[80%] mx-auto">
+          <main className="w-full mx-auto">
             <Navbar />
             <div className="py-10 h-screen">{children}</div>
             <Footer />

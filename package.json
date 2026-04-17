@@ -15,7 +15,9 @@
     "axios": "^1.13.6",
     "formik": "^2.4.9",
     "json-server": "^1.0.0-beta.15",
+    "mongoose": "^9.4.1",
     "next": "16.1.6",
+    "next-auth": "^4.24.14",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "yup": "^1.7.1"
